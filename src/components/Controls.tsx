@@ -6,7 +6,6 @@ interface ControlsProps {
   selectedAlgorithm: AlgorithmName;
   autoPlay: boolean;
   speed: number;
-  comparisonMode: boolean;
   disabledWhileRunning: boolean;
   onReferenceChange: (value: string) => void;
   onFrameCountChange: (value: number) => void;
@@ -16,7 +15,6 @@ interface ControlsProps {
   onReset: () => void;
   onToggleAutoPlay: () => void;
   onSpeedChange: (value: number) => void;
-  onToggleComparisonMode: () => void;
 }
 
 export function Controls({
@@ -25,7 +23,6 @@ export function Controls({
   selectedAlgorithm,
   autoPlay,
   speed,
-  comparisonMode,
   disabledWhileRunning,
   onReferenceChange,
   onFrameCountChange,
@@ -34,22 +31,12 @@ export function Controls({
   onNext,
   onReset,
   onToggleAutoPlay,
-  onSpeedChange,
-  onToggleComparisonMode
+  onSpeedChange
 }: ControlsProps) {
   return (
     <section className="panel controls-panel">
       <div className="panel-title-wrap">
         <h2>Simulation Controls</h2>
-        <label className="toggle-wrap" htmlFor="compare-mode">
-          <input
-            id="compare-mode"
-            type="checkbox"
-            checked={comparisonMode}
-            onChange={onToggleComparisonMode}
-          />
-          <span>Comparison mode</span>
-        </label>
       </div>
 
       <div className="controls-grid">
@@ -87,10 +74,16 @@ export function Controls({
       </div>
 
       <div className="button-row">
-        <button className="primary" onClick={onStart}>Start Simulation</button>
-        <button onClick={onNext} disabled={disabledWhileRunning}>Next Step</button>
+        <button className="primary" onClick={onStart}>
+          Start Simulation
+        </button>
+        <button onClick={onNext} disabled={disabledWhileRunning}>
+          Next Step
+        </button>
         <button onClick={onToggleAutoPlay}>{autoPlay ? "Pause" : "Auto Play"}</button>
-        <button className="ghost" onClick={onReset}>Reset</button>
+        <button className="ghost" onClick={onReset}>
+          Reset
+        </button>
       </div>
 
       <div className="speed-row">

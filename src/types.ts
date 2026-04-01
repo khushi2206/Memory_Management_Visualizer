@@ -1,5 +1,15 @@
 export type AlgorithmName = "FIFO" | "LRU" | "Optimal";
 
+export interface SimulationHistoryEntry {
+  id: string;
+  at: number;
+  referenceInput: string;
+  frameCount: number;
+  selectedAlgorithm: AlgorithmName;
+  faultsByAlgorithm: Record<AlgorithmName, number>;
+  stepCount: number;
+}
+
 export interface SimulationStep {
   step: number;
   requestedPage: number;

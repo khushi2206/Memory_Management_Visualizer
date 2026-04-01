@@ -15,7 +15,7 @@ export function PagingVisualization({
 }: PagingVisualizationProps) {
   if (!currentStep) {
     return (
-      <section className="panel">
+      <section className="panel paging-visualizer">
         <h2>Paging Visualizer</h2>
         <p className="muted">Press Start Simulation to begin step-by-step playback.</p>
       </section>
@@ -23,7 +23,7 @@ export function PagingVisualization({
   }
 
   return (
-    <section className="panel">
+    <section className="panel paging-visualizer">
       <div className="panel-title-wrap">
         <h2>Paging Visualizer</h2>
         <div className="step-pill">Step {visibleStepIndex} / {totalSteps}</div>

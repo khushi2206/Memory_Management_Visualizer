@@ -1,4 +1,23 @@
-node_modules
-dist
-.vscode
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+
+# Logs
 *.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db

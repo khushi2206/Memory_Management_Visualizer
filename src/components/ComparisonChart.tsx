@@ -16,7 +16,7 @@ interface ComparisonChartProps {
   optimalFaults: number;
 }
 
-const colors = ["#ff7a18", "#0ca678", "#1f6feb"];
+const colors = ["#38bdf8", "#2dd4bf", "#818cf8"];
 
 export function ComparisonChart({ fifoFaults, lruFaults, optimalFaults }: ComparisonChartProps) {
   const data = [
